@@ -7,7 +7,7 @@ const client = new textToSpeech.TextToSpeechClient()
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const generate = async (text) => {
-  const outputFile = join(__dirname, '/../commands/utility/output.mp3')
+  const outputFile = join(__dirname, '/../assets/audio/output.mp3')
   const request = {
     input: { text },
     voice: {

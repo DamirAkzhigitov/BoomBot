@@ -16,7 +16,9 @@ export default {
   data: new SlashCommandBuilder().setName('play').setDescription('Play music'),
   async execute(interaction) {
     const connection = getVoiceConnection(interaction.guildId)
-    const resource = createAudioResource(join(__dirname, 'output.mp3'))
+    const resource = createAudioResource(
+      join(__dirname, '/../../assets/audio/output.mp3')
+    )
     const player = createAudioPlayer()
 
     player.play(resource)

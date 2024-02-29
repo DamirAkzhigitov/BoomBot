@@ -3,5 +3,6 @@ node_modules
 wrangler.toml
 .wrangler
 /config.json
-/nodeBot/config.json
 .idea
+/src/config.json
+/src/assets/audio/*.mp3

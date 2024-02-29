@@ -8,13 +8,10 @@
     "node": "18.x"
   },
   "scripts": {
-    "start-dis": "node ./nodeBot/index.js",
-    "start": "node ./src/server.js",
-    "dev": "wrangler dev ./src/server.js",
-    "ngrok": "ngrok http 8787",
+    "start": "node ./src/index.js",
     "validate": "npm run prettier --check",
-    "fix": "prettier . --write",
-    "publish": "wrangler deploy"
+    "register": "node ./src/deploy-commands.js",
+    "fix": "prettier . --write"
   },
   "author": "Damir Akzhigitov",
   "license": "MIT",
