@@ -21,7 +21,7 @@ const generate = async (text) => {
   const writeFile = util.promisify(fs.writeFile)
 
   try {
-    const res = await writeFile(outputFile, response.audioContent)
+    await writeFile(outputFile, response.audioContent)
   } catch (e) {
     console.error('error on write, e: ', e)
   }

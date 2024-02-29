@@ -9,7 +9,7 @@ const headers = {
 const fetchChat = async (text) => {
   let response = {}
   const options = {
-    model: 'accounts/fireworks/models/llama-v2-70b-chat',
+    model: 'accounts/fireworks/models/firefunction-v1',
     max_tokens: 512,
     top_p: 1,
     top_k: 40,
@@ -17,6 +17,10 @@ const fetchChat = async (text) => {
     frequency_penalty: 0,
     temperature: 0.8,
     messages: [
+      {
+        content: 'Помощник который отвечает на русском языке',
+        role: 'system'
+      },
       {
         content: text,
         role: 'user'

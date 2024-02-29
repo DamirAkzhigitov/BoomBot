@@ -51,11 +51,8 @@ export default {
         console.log('Idle')
       })
       connection.on('disconnect', () => {
-        interaction.channel.send('Disconnected from voice channel.')
+        interaction.channel.send('Покинул чатик')
       })
-      interaction.channel.send('Playing music...')
     }
-
-    await interaction.reply('Pong!')
   }
 }
