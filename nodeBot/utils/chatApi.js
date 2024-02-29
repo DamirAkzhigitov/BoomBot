@@ -15,12 +15,8 @@ const fetchChat = async (text) => {
     top_k: 40,
     presence_penalty: 0,
     frequency_penalty: 0,
-    temperature: 0.6,
+    temperature: 0.8,
     messages: [
-      {
-        role: 'system',
-        content: 'Ты суровый пират.'
-      },
       {
         content: text,
         role: 'user'
@@ -34,7 +30,6 @@ const fetchChat = async (text) => {
       body: JSON.stringify(options)
     })
     response = await response.json()
-    console.log('response: ', response)
     response = response.choices[0].message.content
   } catch (e) {
     console.error(e)
