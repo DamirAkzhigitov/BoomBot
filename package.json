@@ -11,7 +11,8 @@
     "start": "node src/index.js",
     "validate": "npm run prettier --check",
     "register": "node ./src/deploy-commands.js",
-    "fix": "prettier . --write"
+    "fix": "prettier . --write",
+    "serve": "nohup node src/index.js &"
   },
   "author": "Damir Akzhigitov",
   "license": "MIT",
