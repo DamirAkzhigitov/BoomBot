@@ -6,12 +6,16 @@ export default {
     .setName('join')
     .setDescription('Join to voice channel!'),
   async execute(interaction) {
-    joinVoiceChannel({
+    const connection = joinVoiceChannel({
       channelId: interaction.channelId,
       guildId: interaction.guildId,
       adapterCreator: interaction.guild.voiceAdapterCreator
     })
 
-    await interaction.reply('BoomBot зашел!')
+    setTimeout(async () => {
+      connection.destroy()
+    }, 300000)
+
+    await interaction.reply('BoomBot зашел (на 5 мин)')
   }
 }

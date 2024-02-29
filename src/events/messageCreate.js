@@ -12,7 +12,7 @@ function getUserFromMention(mention) {
   return matches[1]
 }
 
-const check = new RegExp(/([a-zA-Z])\w+/)
+// const check = new RegExp(/([a-zA-Z])\w+/)
 
 export default {
   name: Events.MessageCreate,
@@ -24,13 +24,13 @@ export default {
 
       let answer = await chatApi(msg)
 
-      console.log('answer: ', answer)
+      // console.log('answer: ', answer)
 
-      const isWrongAnswer = !!check.exec(answer)
+      // const isWrongAnswer = !!check.exec(answer)
 
-      console.log('isWrongAnswer: ', isWrongAnswer)
+      // console.log('isWrongAnswer: ', isWrongAnswer)
 
-      if (isWrongAnswer) answer = 'чет сложно, а можно попроще?'
+      // if (isWrongAnswer) answer = 'чет сложно, а можно попроще?'
 
       await generate(answer)
 
