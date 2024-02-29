@@ -6,12 +6,12 @@ export default {
     .setName('join')
     .setDescription('Join to voice channel!'),
   async execute(interaction) {
-    const connection = joinVoiceChannel({
+    joinVoiceChannel({
       channelId: interaction.channelId,
       guildId: interaction.guildId,
       adapterCreator: interaction.guild.voiceAdapterCreator
     })
 
-    await interaction.reply('Pong!')
+    await interaction.reply('BoomBot зашел!')
   }
 }

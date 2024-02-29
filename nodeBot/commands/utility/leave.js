@@ -10,6 +10,6 @@ export default {
 
     if (connection) connection.destroy()
 
-    await interaction.reply('Pong!')
+    await interaction.reply('Всем пока!')
   }
 }

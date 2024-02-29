@@ -17,7 +17,6 @@ export default {
   async execute(interaction) {
     const connection = getVoiceConnection(interaction.guildId)
     const resource = createAudioResource(join(__dirname, 'output.mp3'))
-    // resource.volume.setVolume(0.1)
     const player = createAudioPlayer()
 
     player.play(resource)

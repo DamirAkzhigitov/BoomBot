@@ -1,10 +1,13 @@
 import textToSpeech from '@google-cloud/text-to-speech'
 import fs from 'fs'
 import util from 'util'
+import { dirname, join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 const client = new textToSpeech.TextToSpeechClient()
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
 const generate = async (text) => {
-  const outputFile =
-    '/home/ckelet/dev/discord-DFG/nodeBot/commands/utility/output.mp3'
+  const outputFile = join(__dirname, '/../commands/utility/output.mp3')
   const request = {
     input: { text },
     voice: {
