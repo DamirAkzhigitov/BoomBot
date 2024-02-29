@@ -1,11 +1,7 @@
 import { REST, Routes } from 'discord.js'
 import config from './config.json' assert { type: 'json' }
+import { commands } from './index.js'
 
-import Join from './commands/utility/join.js'
-import Leave from './commands/utility/leave.js'
-import Play from './commands/utility/play.js'
-
-const commands = [Join, Leave, Play]
 const commandsJSON = []
 
 commands.forEach((command) => {

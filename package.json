@@ -8,7 +8,7 @@
     "node": "18.x"
   },
   "scripts": {
-    "start": "node ./src/index.js",
+    "start": "node src/index.js",
     "validate": "npm run prettier --check",
     "register": "node ./src/deploy-commands.js",
     "fix": "prettier . --write"

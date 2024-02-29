@@ -1,5 +1,4 @@
 import config from '../config.json' assert { type: 'json' }
-const url = 'https://api.fireworks.ai/inference/v1/chat/completions'
 
 const headers = {
   Accept: 'application/json',
@@ -9,7 +8,7 @@ const headers = {
 const fetchChat = async (text) => {
   let response = {}
   const options = {
-    model: 'accounts/fireworks/models/firefunction-v1',
+    model: config.model,
     max_tokens: 512,
     top_p: 1,
     top_k: 40,
@@ -28,7 +27,7 @@ const fetchChat = async (text) => {
     ]
   }
   try {
-    response = await fetch(url, {
+    response = await fetch(config.chatAPI, {
       method: 'POST',
       headers: headers,
       body: JSON.stringify(options)

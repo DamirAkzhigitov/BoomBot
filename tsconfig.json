@@ -16,7 +16,7 @@
       "es2021"
     ] /* Specify a set of bundled library declaration files that describe the target runtime environment. */,
     "jsx": "react" /* Specify what JSX code is generated. */ /* Modules */,
-    "module": "es2022" /* Specify what module code is generated. */, // "rootDir": "./",                                  /* Specify the root folder within your source files. */
+    "module": "esnext" /* Specify what module code is generated. */, // "rootDir": "./",                                  /* Specify the root folder within your source files. */
     "moduleResolution": "node" /* Specify how TypeScript looks up a file from a given module specifier. */, // "typeRoots": [],                                  /* Specify multiple folders that act like `./node_modules/@types`. */
     "types": [
       "@cloudflare/workers-types"

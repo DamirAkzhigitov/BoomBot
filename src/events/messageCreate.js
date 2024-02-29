@@ -24,7 +24,11 @@ export default {
 
       let answer = await chatApi(msg)
 
+      console.log('answer: ', answer)
+
       const isWrongAnswer = !!check.exec(answer)
+
+      console.log('isWrongAnswer: ', isWrongAnswer)
 
       if (isWrongAnswer) answer = 'чет сложно, а можно попроще?'
 

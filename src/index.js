@@ -9,7 +9,8 @@ import Join from './commands/utility/join.js'
 import Leave from './commands/utility/leave.js'
 import Play from './commands/utility/play.js'
 
-const commands = [Join, Leave, Play]
+export const commands = [Join, Leave, Play]
+
 const events = [MessageCreate, InteractionCreate, Ready]
 
 const client = new Client({
@@ -27,10 +28,6 @@ client.commands = new Collection()
 commands.forEach((command) => {
   if ('data' in command && 'execute' in command) {
     client.commands.set(command.data.name, command)
-  } else {
-    console.log(
-      `[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`
-    )
   }
 })
 
