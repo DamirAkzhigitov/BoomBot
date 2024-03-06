@@ -28,14 +28,14 @@ export default {
         console.error('error on generate: ', e)
         return await message.reply('я не смог ответить, прастите!!!')
       }
-
-      setTimeout(async () => {
-        try {
-          await Play.execute(message)
-        } catch (e) {
-          console.error('error on play: ', e)
-        }
-      }, 500)
+      //
+      // setTimeout(async () => {
+      //   try {
+      //     await Play.execute(message)
+      //   } catch (e) {
+      //     console.error('error on play: ', e)
+      //   }
+      // }, 500)
 
       try {
         await message.reply(answer)
