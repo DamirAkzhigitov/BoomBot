@@ -12,8 +12,6 @@ function getUserFromMention(mention) {
   return matches[1]
 }
 
-// const check = new RegExp(/([a-zA-Z])\w+/)
-
 export default {
   name: Events.MessageCreate,
   async execute(message) {
@@ -24,21 +22,26 @@ export default {
 
       let answer = await chatApi(msg)
 
-      // console.log('answer: ', answer)
-
-      // const isWrongAnswer = !!check.exec(answer)
-
-      // console.log('isWrongAnswer: ', isWrongAnswer)
-
-      // if (isWrongAnswer) answer = 'чет сложно, а можно попроще?'
-
-      await generate(answer)
+      try {
+        await generate(answer)
+      } catch (e) {
+        console.error('error on generate: ', e)
+        return await message.reply('я не смог ответить, прастите!!!')
+      }
 
       setTimeout(async () => {
-        await Play.execute(message)
+        try {
+          await Play.execute(message)
+        } catch (e) {
+          console.error('error on play: ', e)
+        }
       }, 500)
 
-      await message.reply(answer)
+      try {
+        await message.reply(answer)
+      } catch (e) {
+        console.error('error on reply: ', e)
+      }
     }
   }
 }
